@@ -1,0 +1,43 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertec Search and Conversation</title>
+
+    <!-- Link to Bulma CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bulma.min.css') }}">
+
+    <!-- Link to external CSS file from the 'static' folder -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+    <!-- Add the Google Cloud AI Platform Search Widget script -->
+    <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=es_419"></script>
+</head>
+<body>
+    <section class="hero is-fullwidth has-background-white is-paddingless">
+        <div class="hero-body">
+            <div class="container-fluid has-text-centered">
+                <img src="{{ url_for('static', filename='LogoInsertecWeb.jpg') }}" alt="Logo">
+                <h1 class="title hero-title"></h1>
+            </div>
+            <section class="section">
+        <div class="container">
+            <!-- Add the search widget element with updated text -->
+            <gen-search-widget
+                configId="852c018e-5392-4780-9a99-1b3272c5e7b6"
+                location="eu"
+                triggerId="searchWidgetTrigger">
+            </gen-search-widget>
+
+            <!-- Element that opens the widget on click. It does not have to be an input -->
+            <input class="input" type="text" placeholder="¿Qué quieres saber?" id="searchWidgetTrigger" />
+        </div>
+    </section>
+        </div>
+    </section>
+
+</body>
+</html>
